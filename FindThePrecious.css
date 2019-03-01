@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css?family=Coustard");
+@font-face {
+  font-family: "marvin";
+  src: url(MarvinVisionsBig-Bold.woff2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Cool effect when selecting text */
+::selection {
+  background: #ff6600;
+  color: #000;
+}
+
+header .container-fluid {
+  padding: 9%;
+}
+
+.container-fluid {
+  padding: 10% 0;
+}
+
+section .separation {
+  width: 5rem;
+  height: 0.5rem;
+  background: linear-gradient(145deg, #f88c33 10%, rgb(255, 0, 0));
+  margin: 7% 0;
+}
+
+.bg {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 5%;
+  margin: 0 3%;
+}
+
+/*** Colors ***/
+.wip {
+  border: 1px solid red;
+}
+
+body,
+nav,
+footer {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+a,
+a:hover,
+.dead,
+body,
+footer,
+.text {
+  color: #e6e6e6;
+  text-decoration: none;
+  transition: 0.4s;
+  border-bottom: 1px dashed transparent;
+}
+
+a:not(.button-box):not(.active):hover,
+i {
+  background-image: linear-gradient(145deg, #f88c33 10%, rgb(255, 0, 0));
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-bottom: 1px dashed transparent;
+}
+
+section a:not(.button-box):not(.nav-link) {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+  padding: 0 0.5rem 0.1rem 0.5rem;
+}
+
+.text {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2%;
+}
+
+.card {
+  color: #201c29;
+}
+
+/*** Fonts ***/
+body,
+.card .card-body {
+  font-size: calc(0.7rem + 0.9vh);
+}
+
+h1 {
+  font-size: calc(0.4rem + 2.2vw);
+  font-weight: 700;
+  transition: 0.4s ease-in-out;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+header h2 {
+  font-size: calc(0.2rem + 1.6vw);
+  font-family: "Open sans", sans-serif;
+  letter-spacing: normal;
+  padding: 2% 0;
+}
+
+h2,
+nav ul li,
+.navbar-bran d {
+  letter-spacing: 1px;
+  font-family: "marvin", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+}
+
+h2 {
+  letter-spacing: 3px;
+  font-size: calc(1.5rem + 2.2vw);
+  font-weight: 700;
+}
+
+/*** Nav ***/
+nav {
+  box-shadow: 0 0 1.5rem 1rem rgba(0, 0, 0, 0.9);
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+}
+
+ul li {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.navbar-brand {
+  margin-left: 2%;
+}
+
+.fa {
+  transition: 0.3s ease;
+}
+
+/*** Carousel Section ***/
+header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.carousel {
+  border: 2px solid rgba(247, 142, 61, 1);
+  box-shadow: 0 0 5vh rgba(0, 0, 0, 1);
+}
+
+.carousel-inner img {
+  height: 100%;
+  width: auto;
+}
+
+.text {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-left: 7%;
+}
+
+.text,
+.text h2 {
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(255, 255, 255, 0.5);
+}
+
+.carousel-inner img {
+  filter: brightness(0.5) saturate(0);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(247, 142, 61, 0.5) !important;
+}
+
+/*** Fellows section ***/
+.nav-pills .nav-item a {
+  padding: calc(0.5rem + 0.8vw) calc(0.5rem + 2.4vw);
+}
+
+.nav-pills .nav-item .active {
+  background: #f88c33;
+}
+
+/*** Cards ***/
+.card {
+  background: #e6e6e6;
+  margin: 2rem;
+  padding: 0;
+}
+
+.card-2 {
+  animation: 0.8s appear;
+}
+
+.card-3 {
+  animation: 1.2s appear;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.characters img {
+  width: 100%;
+  padding: 1vh;
+  opacity: 0.5;
+  transition: all 0.7s ease-in;
+}
+
+img {
+  filter: saturate(0) contrast(1.1);
+}
+
+.characters:hover img {
+  opacity: 1;
+}
+
+.card:hover .reward {
+  opacity: 0;
+}
+
+.card:hover .name,
+.card:hover .dead {
+  font-size: 1.5rem;
+  top: 65%;
+}
+
+.reward,
+.dead,
+.name {
+  position: absolute;
+}
+
+.reward,
+.dead {
+  width: 70%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.name {
+  color: white;
+  font-size: 3rem;
+  left: 50%;
+}
+
+.reward {
+  padding: 0.5rem;
+  background: #fff;
+  top: 7%;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0.5rem 0.5rem 0.7rem rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease-in;
+}
+
+.reward span {
+  color: orangered;
+  font-weight: 700;
+}
+
+.dead,
+.name {
+  font-size: 3rem;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.6);
+  transition: all 0.7s ease-in;
+}
+
+.card .card-footer {
+  text-align: center;
+  background: #e6e6e6;
+  border-top: 2px solid #f78e3d;
+}
+
+/*** Reward Section ***/
+.button {
+  border-radius: 20px;
+  padding: 0.5rem;
+  transition: 0.5s;
+  border: 2px solid #f78e3d;
+}
+
+.button:hover {
+  cursor: pointer;
+  border-radius: 0;
+}
+
+/*** Ring Section ***/
+.card-header {
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+th:first-of-type,
+tr td:first-of-type {
+  width: 20vw;
+  text-align: center;
+}
+
+th:nth-of-type(2),
+tr td:nth-of-type(2) {
+  width: 60vw;
+  padding-left: 2rem;
+}
+
+.quotes {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translateY(-50%, -20%);
+  font-size: 18rem;
+  color: rgba(247, 142, 61, 0.7);
+  font-family: "coustard", cursive;
+}
+
+/*** Contact section ***/
+form input,
+textarea,
+form select {
+  width: 100%;
+  border-bottom: 5px solid rgba(247, 142, 61, 1);
+  border-radius: 0;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 1.5vh;
+  color: #e6e6e6;
+  font-size: calc(0.8rem + 0.4vw);
+}
+
+form input,
+textarea {
+  background: rgba(247, 142, 61, 0.2);
+}
+
+select {
+  background: url(https://cdn4.iconfinder.com/data/icons/iconsweets/50/arrow_down.png)
+      no-repeat right,
+    rgba(247, 142, 61, 0.2);
+  -webkit-appearance: none;
+  background-position-x: 100%;
+}
+
+select option {
+  color: #201c29;
+  background: #f78e3d;
+}
+
+select,
+.submit {
+  margin: 2rem 0;
+}
+
+.submit {
+  border: 2px solid rgba(247, 142, 61, 1);
+  background: transparent;
+}
+
+/*** Footer ***/
+footer .container-fluid {
+  border-top: 1px solid rgba(247, 142, 61, 1);
+}
+
+footer ul:first-of-type a {
+  color: rgba(247, 142, 61, 1);
+}
+
+footer i {
+  font-size: 1.5rem;
+}
+
+.fab {
+  border: 1px dashed #f88c33;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.fab:hover {
+  animation: bounce 0.4s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
