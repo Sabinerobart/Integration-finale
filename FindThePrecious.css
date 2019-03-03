@@ -1,7 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Coustard");
 @font-face {
-  font-family: "marvin";
-  src: url(MarvinVisionsBig-Bold.woff2);
+  font-family: "anicb";
+  src: url(Fonts/anicb___.ttf);
+}
+@font-face {
+  font-family: "party business";
+  src: url(Fonts/partybusiness.ttf);
+}
+@font-face {
+  font-family: "tngan";
+  src: url(Fonts/tngan.ttf);
 }
 
 html {
@@ -11,28 +19,12 @@ html {
 /* Cool effect when selecting text */
 ::selection {
   background: #ff6600;
-  color: #000;
+  color: #201c29;
 }
 
-header .container-fluid {
-  padding: 9%;
-}
-
+/* */
 .container-fluid {
-  padding: 10% 0;
-}
-
-section .separation {
-  width: 5rem;
-  height: 0.5rem;
-  background: linear-gradient(145deg, #f88c33 10%, rgb(255, 0, 0));
-  margin: 7% 0;
-}
-
-.bg {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 5%;
-  margin: 0 3%;
+  padding: 5% 2%;
 }
 
 /*** Colors ***/
@@ -40,35 +32,27 @@ section .separation {
   border: 1px solid red;
 }
 
-body,
-nav,
-footer {
-  background: rgba(0, 0, 0, 0.95);
-}
-
-a,
-a:hover,
 .dead,
-body,
 footer,
 .text {
   color: #e6e6e6;
+}
+
+a, a:hover {
+  color: inherit;
   text-decoration: none;
-  transition: 0.4s;
-  border-bottom: 1px dashed transparent;
+  transition: .3s;
+  border-bottom: 1px solid transparent;
 }
 
-a:not(.button-box):not(.active):hover,
-i {
-  background-image: linear-gradient(145deg, #f88c33 10%, rgb(255, 0, 0));
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  border-bottom: 1px dashed transparent;
+a:hover {
+  color: orangered;
+  border-bottom: 2px dashed transparent;
 }
 
-section a:not(.button-box):not(.nav-link) {
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
-  padding: 0 0.5rem 0.1rem 0.5rem;
+p a {
+  border-bottom: 2px dashed #f78e3d;
+  padding: 0 .5rem;
 }
 
 .text {
@@ -76,14 +60,31 @@ section a:not(.button-box):not(.nav-link) {
   padding: 2%;
 }
 
-.card {
-  color: #201c29;
+header, #reward, #ring, #contact {
+  background: url("Pictures/bg_dark.png");
+  color: #e6e6e6;
+}
+
+footer {
+  background: rgba(247, 142, 61, 1);
 }
 
 /*** Fonts ***/
-body,
-.card .card-body {
-  font-size: calc(0.7rem + 0.9vh);
+body {
+  font-size: calc(.8rem + .5vw);
+  font-family: "anicb", cursive;
+  background: url("Pictures/bg_light.png");
+}
+
+.panel-heading {
+  font-size: calc(1rem + 1vw);
+  background-color: #c0c0c0;
+  color: #201c29;
+}
+
+h1, header h2 {
+  font-family: "party business", cursive;
+  text-transform: lowercase;
 }
 
 h1 {
@@ -92,35 +93,40 @@ h1 {
   transition: 0.4s ease-in-out;
 }
 
-h4 {
-  font-weight: 600;
-}
-
 header h2 {
-  font-size: calc(0.2rem + 1.6vw);
-  font-family: "Open sans", sans-serif;
+  font-size: calc(0.4rem + 1.5vw);
   letter-spacing: normal;
   padding: 2% 0;
 }
 
 h2,
-nav ul li,
-.navbar-bran d {
-  letter-spacing: 1px;
-  font-family: "marvin", Impact, Haettenschweiler, "Arial Narrow Bold",
-    sans-serif;
+nav ul li, .nav-pills, .card, .panel {
+  font-family: "anicb", cursive;
 }
 
 h2 {
-  letter-spacing: 3px;
-  font-size: calc(1.5rem + 2.2vw);
+  font-size: calc(1rem + .8vw);
   font-weight: 700;
+}
+
+section h2 {
+  margin: 5%;
+}
+
+section h2::before, section h2::after {
+  content: " ij ";
+  font-family: "tngan", cursive;
+}
+
+h4 {
+  font-size: calc(1rem + 2vw);
 }
 
 /*** Nav ***/
 nav {
-  box-shadow: 0 0 1.5rem 1rem rgba(0, 0, 0, 0.9);
   width: 100%;
+  background : rgba(247, 142, 61, 1);
+  box-shadow: 0 .5rem .8rem rgba(0, 0, 0, .2);
 }
 
 ul {
@@ -129,17 +135,26 @@ ul {
 }
 
 ul li {
-  padding: 1rem;
-  text-align: center;
-  font-size: 1.2rem;
+  margin: .5rem 0;
+  font-size: calc(.5rem + .5vw);
+  padding: 0 2.5%;
 }
 
-.navbar-brand {
-  margin-left: 2%;
+nav ul .active a {
+  border-bottom: 3px solid #e6e6e6;
 }
 
-.fa {
-  transition: 0.3s ease;
+.navbar ul li:not(:last-of-type) {
+  border-right: 1px solid #e6e6e6;;
+}
+
+@media all and (max-width: 992px) {
+  .navbar ul li:not(:last-of-type) {
+    border-right: 1px solid transparent;
+  }
+  nav ul .active a {
+    border-bottom: 3px solid transparent;
+  }
 }
 
 /*** Carousel Section ***/
@@ -151,12 +166,12 @@ header {
 
 .carousel {
   border: 2px solid rgba(247, 142, 61, 1);
-  box-shadow: 0 0 5vh rgba(0, 0, 0, 1);
+  box-shadow: 0 0 5vh rgba(0, 0, 0, .6);
 }
 
 .carousel-inner img {
   height: 100%;
-  width: auto;
+  width: 100vw;
 }
 
 .text {
@@ -183,19 +198,54 @@ header {
 }
 
 /*** Fellows section ***/
-.nav-pills .nav-item a {
-  padding: calc(0.5rem + 0.8vw) calc(0.5rem + 2.4vw);
+.nav-pills {
+  border-bottom: 3px solid transparent;
+}
+
+.nav-pills .nav-item {
+  padding: calc(0.5rem + 0.8vw);
 }
 
 .nav-pills .nav-item .active {
-  background: #f88c33;
+  border-bottom: 3px solid #f88c33;
+  background: none;
+  border-radius: 0;
+  color: #201c29;
+}
+
+h2::before, h2::after, .nav-pills .active span, .active .nav-pills span {
+  font-family: "tngan", cursive;
+}
+
+.nav-pills span, .nav-pills span {
+  font-size: 150%;
+  color: transparent;
+}
+
+.nav-pills .active span {
+  color: rgba(247, 142, 61, 1);
 }
 
 /*** Cards ***/
+
 .card {
-  background: #e6e6e6;
+  background: #060508;
   margin: 2rem;
   padding: 0;
+  text-transform: lowercase;
+}
+
+.name {
+  left: 50%;
+  font-size:calc(1.7rem + 2vw);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease-in;
+}
+
+.card, h4 {
+  font-family: "party business", cursive;
 }
 
 .card-2 {
@@ -220,10 +270,7 @@ header {
   padding: 1vh;
   opacity: 0.5;
   transition: all 0.7s ease-in;
-}
-
-img {
-  filter: saturate(0) contrast(1.1);
+  filter: saturate(0) contrast(.8);
 }
 
 .characters:hover img {
@@ -234,9 +281,8 @@ img {
   opacity: 0;
 }
 
-.card:hover .name,
-.card:hover .dead {
-  font-size: 1.5rem;
+.card:hover .name {
+  font-size: calc(1.5rem + 1.5vw);
   top: 65%;
 }
 
@@ -246,26 +292,43 @@ img {
   position: absolute;
 }
 
-.reward,
-.dead {
+.reward {
   width: 70%;
   left: 50%;
   transform: translate(-50%);
+  font-size: calc(1rem + 1vw);
 }
 
-.name {
-  color: white;
-  font-size: 3rem;
+.dead {
+  color: orangered;
+  top: 10%;
   left: 50%;
+  transform: translate(-50%, 0);
+  font-size: calc(2.5rem + 2vw);
+}
+
+.strikethrough {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  text-decoration: line-through;
+  font-size: calc(2.5rem + 2vw);
+}
+
+.dead-name {
+  color: #e6e6e6;
 }
 
 .reward {
   padding: 0.5rem;
   background: #fff;
   top: 7%;
+  color: black;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0.5rem 0.5rem 0.7rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0.7rem rgba(255, 255, 255, 1);
   transition: 0.3s ease-in;
 }
 
@@ -274,39 +337,55 @@ img {
   font-weight: 700;
 }
 
-.dead,
-.name {
-  font-size: 3rem;
-  top: 40%;
-  transform: translate(-50%, -50%);
-  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.6);
-  transition: all 0.7s ease-in;
+.card .card-footer {
+  color: #e6e6e6;
+  font-size: calc(1.2rem + 1vw);
 }
 
-.card .card-footer {
-  text-align: center;
-  background: #e6e6e6;
-  border-top: 2px solid #f78e3d;
+/*** Hunters section ***/
+
+#hunters p {
+  font-family: "party business", cursive;
+  font-size: calc(1rem + 1vw);
 }
 
 /*** Reward Section ***/
-.button {
+
+.button-box .btn {
   border-radius: 20px;
-  padding: 0.5rem;
+  padding: .8rem 2.5rem;
   transition: 0.5s;
   border: 2px solid #f78e3d;
 }
 
-.button:hover {
-  cursor: pointer;
+h4, .button-box .btn, section h2::before, section h2::after, h2::before, h2::after, .nav-pills .nav-item .active::before, .nav-pills .nav-item .active::after {
+  color: rgba(247, 142, 61, 1);
+}
+
+.button-box .btn:hover {
   border-radius: 0;
 }
 
 /*** Ring Section ***/
-.card-header {
-  background: rgba(0, 0, 0, 0.1);
+.panel {
+  position: relative; /* Necessary for the "position: absolute"
+  on the .quotes to be effective */
+  margin: 5% 0;
+  border-bottom: 3px solid rgba(247, 142, 61, 1);
+}
+
+.panel-heading {
+  background: rgba(247, 142, 61, 1);
   border-bottom: 2px solid rgba(0, 0, 0, 0);
   box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.3);
+  color: #e6e6e6;
+  border-radius: 20px 20px 0 0;
+}
+
+.panel-body {
+  background: #e6e6e6;
+  color: #201c29;
+  padding: 3% 0;
 }
 
 th:first-of-type,
@@ -321,7 +400,7 @@ tr td:nth-of-type(2) {
   padding-left: 2rem;
 }
 
-.quotes {
+#ring .panel .panel-body .quotes {
   position: absolute;
   top: 10%;
   left: 10%;
@@ -331,7 +410,12 @@ tr td:nth-of-type(2) {
   font-family: "coustard", cursive;
 }
 
+.gollum-pic {
+  clip-path: circle(30% at center);
+}
+
 /*** Contact section ***/
+
 form input,
 textarea,
 form select {
@@ -375,21 +459,33 @@ select,
   background: transparent;
 }
 
+.map {
+  margin: 10% auto;
+}
+
+/*** Army ***/
+
+.info {
+  margin: 10vw auto;
+}
+
 /*** Footer ***/
-footer .container-fluid {
-  border-top: 1px solid rgba(247, 142, 61, 1);
+
+footer ul li {
+  margin: 1rem 0;
 }
 
-footer ul:first-of-type a {
-  color: rgba(247, 142, 61, 1);
+footer li a {
+  transition: .5s;
 }
 
-footer i {
-  font-size: 1.5rem;
+footer li a:hover {
+  color: orangered;
 }
 
 .fab {
-  border: 1px dashed #f88c33;
+  font-size: 1.5rem;
+  border: 1px dashed;
   border-radius: 50%;
   padding: 1rem;
 }
