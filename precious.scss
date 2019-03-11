@@ -1,0 +1,57 @@
+// ----
+// Sass (v3.5.6)
+// Compass (vundefined)
+// ----
+
+$border-size: 2px;
+$shadow-size: 1px;
+$shadow-blur: 1px;
+$ring-size: 20px;
+
+@mixin border($border-size, $color) {
+  border: $border-size solid $color;
+  border-radius: 50%;
+}
+
+@mixin shadow($shadow-size, $shadow-size, $shadow-blur, $color) {
+  box-shadow: $shadow-size $shadow-size $shadow-blur $color, inset $shadow-size $shadow-size $shadow-blur $color;
+}
+
+@mixin border-radius {
+  border-radius: 50%;
+}
+
+.first-ring {
+  @include border($border-size*1.5, #FF6703);
+  @include shadow($shadow-size, $shadow-size, $shadow-blur, #FF6703);
+  @include border-radius;
+  height: $ring-size*2;
+  width: $ring-size*2;
+}
+
+.second-ring {
+  @include border($border-size*5, gold);
+  @include shadow($shadow-size*5, $shadow-size*5, $shadow-blur*5, darken(gold, 10%));
+  @include border-radius;
+  height: $ring-size*6;
+  width: $ring-size*6;
+}
+
+@for $i from 1 through 6 {
+  .ring-#{$i} {
+    border: $i * $border-size solid #343434;
+    @include border-radius;
+    height: $i * $ring-size;
+    width: $i * $ring-size;
+    display: inline-block;
+    margin: $i * -.3rem;
+    vertical-align: middle;
+    box-shadow: $i/2*$shadow-size $i/2*$shadow-size $shadow-blur*$i/2 #343434, inset $i/2*$shadow-size $i/2*$shadow-size $shadow-blur*$i/2 #343434;
+  }
+}
+
+
+/*** Other styles ***/
+section {
+  margin: 10vh auto;
+}
